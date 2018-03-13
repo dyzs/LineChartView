@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="white">#FFFFFF</color>
+
+    <color name="oxygen_green">#35D599</color>
+
+    <color name="oxygen_grey">#979797</color>
+
+    <color name="alice_white">#e9ecee</color>
+
+    <color name="carbon_black">#101318</color>
+
+    <color name="light_pink">#d2767c</color>
+</resources>

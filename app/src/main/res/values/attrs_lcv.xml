@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LineChartViewDYZS">
+        <attr name="lcvLineSize" format="dimension"/>
+        <attr name="lcvLineColor" format="color"/>
+        <attr name="lcvSelectionColor" format="color"/>
+        <attr name="lcvXYAxisColor" format="color"/>
+        <attr name="lcvXYAxisPointColor" format="color"/>
+        <attr name="lcvTextColor" format="color"/>
+        <attr name="lcvYAxisDisplay" format="boolean"/>
+        <attr name="lcvPerLineDuration" format="integer"/>
+        <attr name="lcvXAxisDisplayNumber" format="integer"/>
+    </declare-styleable>
+</resources>

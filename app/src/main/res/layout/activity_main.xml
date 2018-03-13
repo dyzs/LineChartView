@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/reload"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="reset test data"
+            android:layout_alignParentTop="true"
+            android:background="@color/light_pink"
+            android:gravity="center"
+            />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scrollbars="none"
+            android:layout_centerInParent="true"
+            >
+            <cn.dyzs.view.linechartview.LineChartView
+                android:id="@+id/lcv_yj"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:lcvXYAxisPointColor="@color/carbon_black"
+                app:lcvTextColor="@color/light_pink"
+                app:lcvYAxisDisplay="true"
+                app:lcvXAxisDisplayNumber="5"
+                />
+        </HorizontalScrollView>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
