@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">LineChartView</string>
+    <string name="test_reload">点击重新载入测试数据</string>
 </resources>

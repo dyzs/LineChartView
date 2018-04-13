@@ -60,7 +60,6 @@ public class LineChartView extends View {
     private Path mReplacePath;// path measure 的路径, 用来替换定义的 path 路径
     private PathMeasure mLinePathMeasure;
     private float mPathSegment;
-    private ValueAnimator mPathMeasureAnimator;
     private boolean isPlayLine = false, mDisplayYAxis = true;
 
     private Path mGradientPath;// 用来显示折线图的渐变颜色的路径
@@ -405,16 +404,16 @@ public class LineChartView extends View {
      */
     public void playLineAnimation() {
         isPlayLine = true;
-        mPathMeasureAnimator = new ValueAnimator().ofFloat(0, 1);
-        mPathMeasureAnimator.setDuration(mPerLineDuration * mListPoints.size());
-        mPathMeasureAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        ValueAnimator pathMeasureAnimator = ValueAnimator.ofFloat(0, 1);
+        pathMeasureAnimator.setDuration(mPerLineDuration * mListPoints.size());
+        pathMeasureAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 mPathSegment = (float) animation.getAnimatedValue();
                 postInvalidate();
             }
         });
-        mPathMeasureAnimator.addListener(new Animator.AnimatorListener() {
+        pathMeasureAnimator.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
 
@@ -435,9 +434,13 @@ public class LineChartView extends View {
 
             }
         });
-        mPathMeasureAnimator.start();
+        pathMeasureAnimator.start();
     }
 
+    @Override
+    public boolean performClick() {
+        return super.performClick();
+    }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -448,6 +451,7 @@ public class LineChartView extends View {
                 break;
             case MotionEvent.ACTION_UP:
                 handleActionUp(event);
+                performClick();
                 break;
         }
         return true;
